@@ -10,7 +10,7 @@ public class elevator_go : MonoBehaviour
     public Rigidbody rb;
     public float forceStrength = 20;
     
-    //float forceControl;
+    float forceControl;
 
     // Start is called before the first frame update
     void Start()
@@ -21,13 +21,15 @@ public class elevator_go : MonoBehaviour
     //de mai putine ori decat Update
     private void FixedUpdate()
     {
-        //rb.AddForce(Vector3.up * forceControl * forceStrength);
-        rb.AddForce(Vector3.up * forceStrength);
+        rb.AddForce(Vector3.up * forceControl * forceStrength);
+        //rb.AddForce(Vector3.up * forceStrength);
+        //Vector3 target = target.position - myPosition;
+        //rb.AddForce(target * 15 * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //forceControl =Input.GetAxis("Vertical");
+        forceControl =Input.GetAxis("Vertical");
     }
 }
