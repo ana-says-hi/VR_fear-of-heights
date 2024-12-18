@@ -1863,6 +1863,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 2113dea347164f748b9c48514e713cee, type: 3}
   m_PrefabInstance: {fileID: 1052413219}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &1171142682 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1700556721083670, guid: c6781f5951b5b85429a73e8bf7f7ec2a, type: 3}
@@ -1884,6 +1885,8 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 122
   m_CollisionDetection: 0
+=======
+>>>>>>> parent of 61fdb4d (finished outside deco)
 --- !u!1001 &1279121234
 PrefabInstance:
   m_ObjectHideFlags: 0
