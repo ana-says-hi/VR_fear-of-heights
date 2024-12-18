@@ -14,7 +14,7 @@ public class elevator_go : MonoBehaviour
     Vector3[] locations;
 
     private Vector3 targetPosition; // Current target position
-    public float moveSpeed = 5f; // Movement speed
+    public float moveSpeed = 2f; // Movement speed
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +31,6 @@ public class elevator_go : MonoBehaviour
             float yValue = 0.5f + (i * 5f);
             locations[i] = startPos + new Vector3(0, yValue, 0);
         }
-
         ChooseRandomTarget();
     }
 
@@ -43,11 +42,20 @@ public class elevator_go : MonoBehaviour
         Vector3 direction = (targetPosition - rb.position).normalized;
         rb.AddForce(direction * forceStrength);
 
-        if (Vector3.Distance(rb.position, targetPosition) < 0.1f)
-        {
-            rb.velocity = Vector3.zero;
-            ChooseRandomTarget();
-        }
+        //yield new WaitForSeconds(3f);
+        //StartCoroutine(WaitAndChooseNextTarget());
+
+   // Check if close to the target position
+      //  if (Vector3.Distance(rb.position, targetPosition) < 0.1f)
+      //  {
+     //       rb.velocity = Vector3.zero; // Stop movement      
+      //  }
+    }
+
+     private IEnumerator WaitAndChooseNextTarget()
+    {
+        yield return new WaitForSeconds(3f); // Wait for 3 seconds
+        ChooseRandomTarget(); // Choose a new random target
     }
 
     // Update is called once per frame
