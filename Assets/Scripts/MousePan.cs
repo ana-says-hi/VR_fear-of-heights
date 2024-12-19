@@ -3,7 +3,8 @@ using UnityEngine;
 public class MousePan : MonoBehaviour
 {
     public float sensitivity = 100f; // Mouse sensitivity
-    float xRotation = 0f; // Tracks vertical rotation
+    float xRotation = 0f; // Tracks vertical (up/down) rotation
+    float yRotation = 0f; // Tracks horizontal (left/right) rotation
 
     void Start()
     {
@@ -17,12 +18,14 @@ public class MousePan : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
 
-        // Vertical rotation (clamped to avoid flipping the camera)
+        // Update vertical rotation (clamp to avoid flipping the camera upside down)
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        // Apply rotation: vertical to the camera (local), horizontal to the camera (global)
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        transform.Rotate(Vector3.up * mouseX, Space.World);
+        // Update horizontal rotation (no clamping for full 360° rotation)
+        yRotation += mouseX;
+
+        // Apply the rotation to the camera
+        transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
     }
 }
