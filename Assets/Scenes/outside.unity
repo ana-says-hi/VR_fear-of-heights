@@ -1912,9 +1912,9 @@ Rigidbody:
   m_Drag: 2
   m_AngularDrag: 0.1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &555576048
 MonoBehaviour:
@@ -1925,15 +1925,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 555576042}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fa37ccc84023e04a91b7097803f5a25, type: 3}
+  m_Script: {fileID: 11500000, guid: 980260843bdd3454892b01b33eb1a1b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 555576044}
-  forceStrength: 20
-  forceControl: 0
-  locations: []
-  targetPosition: {x: 0, y: 0, z: 0}
-  moveSpeed: 5
 --- !u!1001 &575689546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2282,12 +2276,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fa37ccc84023e04a91b7097803f5a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 717389219}
-  forceStrength: 20
-  forceControl: 0
-  locations: []
-  targetPosition: {x: 0, y: 0, z: 0}
-  moveSpeed: 5
 --- !u!54 &717389219
 Rigidbody:
   m_ObjectHideFlags: 0
