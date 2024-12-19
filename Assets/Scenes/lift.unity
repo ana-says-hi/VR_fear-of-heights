@@ -586,6 +586,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 7db42757b9c1bab409898528713982e0, type: 3}
   m_PrefabInstance: {fileID: 360615361}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &650617351 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 2751bfe6837879649bc54e1823cdf856, type: 3}
+  m_PrefabInstance: {fileID: 937946108}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &794689093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -909,6 +914,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 2751bfe6837879649bc54e1823cdf856, type: 3}
   m_PrefabInstance: {fileID: 937946108}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &937946110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650617351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2684b56eaf2ac064d9526583d07d0e32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elevator: {fileID: 937946109}
+  floors: []
+  speed: 2
+  floorKeys: 
 --- !u!1 &1039969617
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,6 +1063,7 @@ GameObject:
   - component: {fileID: 1259060818}
   - component: {fileID: 1259060817}
   - component: {fileID: 1259060816}
+  - component: {fileID: 1259060819}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1107,14 +1129,27 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259060815}
-  m_LocalRotation: {x: -0, y: -0.4980428, z: -0, w: 0.8671525}
-  m_LocalPosition: {x: 4.86, y: 10.82, z: -2.83}
+  m_LocalRotation: {x: -0, y: -0.7470823, z: -0, w: 0.66473156}
+  m_LocalPosition: {x: -1.04, y: 10.82, z: 0.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -59.741, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -96.677, z: 0}
+--- !u!114 &1259060819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259060815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9281e9e6612d224f9fccaeadc32ff88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensitivity: 100
 --- !u!1001 &1391789449
 PrefabInstance:
   m_ObjectHideFlags: 0
