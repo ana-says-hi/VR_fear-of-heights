@@ -4,64 +4,55 @@ using UnityEngine;
 
 public class buttons_elevator : MonoBehaviour
 {
-   public Transform elevator; // The elevator object to move
-    public Transform[] floors; // Array of floor positions (set in the inspector)
-    public float speed = 2f; // Speed of the elevator movement
+    // public Transform elevator; // The elevator object to move
+    // public Transform[] floors; // Array of floor positions (set in the inspector)
+    // public float speed = 2f; // Speed of the elevator movement
 
-    private bool isMoving = false; // Is the elevator currently moving?
-    private Transform targetFloor; // Target floor to move to
+    // private bool isMoving = false; // Is the elevator currently moving?
+    // private Transform targetFloor; // Target floor to move to
 
-    public KeyCode[] floorKeys; // Array of keys corresponding to floors
+    // public KeyCode[] floorKeys; // Array of keys corresponding to floors
+
+    // public Transform camera;
+    // public float playerActivationDistance;
+    // bool active = false;
+
+    // void Update()
+    // {
+    //     RaycastHit hit;
+    //     active=Physics.Raycast(camera.position,camera.TransformDirection(Vector3.forward), out hit,playerActivationDistance);
+
+    //     if(Input.GetKeyDown(KeyCode.F) && active==true)
+    //         {
+    //             hit.transform.GetComponent<Animator>().SetTrigger("Activate");
+    //         }
+    // }
+    public GameObject textBubble; // Drag the text bubble here in the Inspector
+
+    void Start()
+    {
+        if (textBubble != null)
+            textBubble.SetActive(false); // Ensure the text is hidden initially
+    }
 
     void Update()
     {
-        // Check for input to activate floors
-        for (int i = 0; i < floorKeys.Length; i++)
+        // Cast a ray from the camera to detect what the player is looking at
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
         {
-            if (Input.GetKeyDown(floorKeys[i]))
+            // Check if the object being hit is this object
+            if (hit.transform == transform)
             {
-                MoveToFloor(i);
+                if (textBubble != null)
+                    textBubble.SetActive(true); // Show the text bubble
             }
-        }
-
-        // Move the elevator if it is in motion
-        if (isMoving && targetFloor != null)
-        {
-            elevator.position = Vector3.MoveTowards(elevator.position, targetFloor.position, speed * Time.deltaTime);
-
-            // Stop moving if the elevator has reached the target floor
-            if (Vector3.Distance(elevator.position, targetFloor.position) < 0.01f)
+            else
             {
-                isMoving = false;
-                targetFloor = null;
-            }
-        }
-    }
-
-    // This method is called when a floor button is pressed
-    public void MoveToFloor(int floorIndex)
-    {
-        if (floorIndex < 0 || floorIndex >= floors.Length)
-        {
-            Debug.LogError("Invalid floor index: " + floorIndex);
-            return;
-        }
-
-        if (!isMoving)
-        {
-            targetFloor = floors[floorIndex];
-            isMoving = true;
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        // Detect trigger collisions for physical buttons
-        for (int i = 0; i < floors.Length; i++)
-        {
-            if (other.gameObject.name == $"Button_Floor_{i + 1}")
-            {
-                MoveToFloor(i);
+                if (textBubble != null)
+                    textBubble.SetActive(false); // Hide the text bubble
             }
         }
     }
