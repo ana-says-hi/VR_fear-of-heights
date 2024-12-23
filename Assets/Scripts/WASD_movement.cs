@@ -2,28 +2,56 @@ using UnityEngine;
 
 public class WASD_movement : MonoBehaviour
 {
-    public float moveSpeed = 10f;       // Speed of smooth movement
-    //public float stepDistance = 1f;    // Distance the camera moves with each step
-    Rigidbody rb;
-    BoxCollider bc;
+    public float moveSpeed = 10f;       // Movement speed
+    public Transform cameraTransform;  // Reference to the camera's transform
+    private Rigidbody rb;
 
     void Start()
     {
-        rb = this.GetComponent<Rigidbody>();
-        bc = this.GetComponent<BoxCollider>();
+        rb = GetComponent<Rigidbody>();
+        if (rb == null)
+        {
+            Debug.LogError("Rigidbody component not found!");
+        }
+
+        if (cameraTransform == null)
+        {
+            cameraTransform = Camera.main.transform; // Automatically assign the Main Camera
+        }
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        //bc.transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
         HandleMovement();
     }
 
     void HandleMovement()
     {
-        if (Input.GetKey(KeyCode.W)) rb.AddForce(transform.forward*moveSpeed);
-        if (Input.GetKey(KeyCode.S)) rb.AddForce(transform.forward*moveSpeed*-1);
-        if (Input.GetKey(KeyCode.A)) rb.AddForce(transform.right*moveSpeed*-1);
-        if (Input.GetKey(KeyCode.D)) rb.AddForce(transform.right*moveSpeed);
+        // Get input from WASD keys
+        float moveX = 0f;
+        float moveZ = 0f;
+
+        if (Input.GetKey(KeyCode.W)) moveZ += 1f;
+        if (Input.GetKey(KeyCode.S)) moveZ -= 1f;
+        if (Input.GetKey(KeyCode.A)) moveX -= 1f;
+        if (Input.GetKey(KeyCode.D)) moveX += 1f;
+
+        // Combine inputs into a direction vector
+        Vector3 inputDirection = new Vector3(moveX, 0, moveZ).normalized;
+
+        // Get the camera's forward and right directions, ignoring the Y component
+        Vector3 camForward = cameraTransform.forward;
+        camForward.y = 0f; // Ignore vertical tilt
+        camForward.Normalize();
+
+        Vector3 camRight = cameraTransform.right;
+        camRight.y = 0f; // Ignore vertical tilt
+        camRight.Normalize();
+
+        // Calculate the movement direction relative to the camera
+        Vector3 moveDirection = camForward * inputDirection.z + camRight * inputDirection.x;
+
+        // Apply movement
+        rb.velocity = moveDirection * moveSpeed + new Vector3(0, rb.velocity.y, 0);
     }
 }
