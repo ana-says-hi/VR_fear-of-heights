@@ -5,6 +5,7 @@ public class MousePan : MonoBehaviour
     public float sensitivity = 100f; // Mouse sensitivity
     float xRotation = 0f; // Tracks vertical (up/down) rotation
     float yRotation = 0f; // Tracks horizontal (left/right) rotation
+    public GameObject cameraHelper;
 
     void Start()
     {
@@ -22,10 +23,12 @@ public class MousePan : MonoBehaviour
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        // Update horizontal rotation (no clamping for full 360° rotation)
+        // Update horizontal rotation (no clamping for full 360ï¿½ rotation)
         yRotation += mouseX;
 
         // Apply the rotation to the camera
-        transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
+        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        cameraHelper.transform.localRotation=Quaternion.Euler(0f, yRotation, 0f);
+        
     }
 }
