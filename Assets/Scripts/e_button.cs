@@ -67,7 +67,7 @@ public class e_button : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Main Camera"))
         {
             isNearControlPanel = true;
             uiPanel.SetActive(true);
@@ -77,7 +77,7 @@ public class e_button : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Main Camera"))
         {
             isNearControlPanel = false;
             uiPanel.SetActive(false);
