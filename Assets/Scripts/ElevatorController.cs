@@ -31,10 +31,9 @@ public class ElevatorController : MonoBehaviour
     private void Update()
     {
         // Check for number key presses and set target floor
-        if (Input.GetKeyDown(KeyCode.Alpha1)) MoveElevatorToFloor(0); // Floor1
-        if (Input.GetKeyDown(KeyCode.Alpha2)) MoveElevatorToFloor(1); // Floor2
-        if (Input.GetKeyDown(KeyCode.Alpha3)) MoveElevatorToFloor(2); // Floor3
-        // Add more floors if needed
+        for(int i=0;i<=7;i++)
+            if(Input.GetKeyDown(KeyCode.Alpha1+i))
+                MoveElevatorToFloor(i);
 
         // Move the elevator if it's currently moving
         if (isMoving && targetFloor != null)
