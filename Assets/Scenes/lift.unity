@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.055614475, g: 0.09294586, b: 0.14765415, a: 1}
+  m_IndirectSpecularColor: {r: 0.055602226, g: 0.092940785, b: 0.1476003, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -969,7 +969,7 @@ Transform:
   m_GameObject: {fileID: 798133158}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6, y: 130, z: -63.3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 82126337}
@@ -2096,7 +2096,11 @@ MonoBehaviour:
   - {fileID: 1047952743}
   - {fileID: 1649286097}
   - {fileID: 1681968446}
-  - {fileID: 1681968446}
+  - {fileID: 2017454429}
+  - {fileID: 1022030176}
+  - {fileID: 870349327}
+  - {fileID: 1155468440}
+  - {fileID: 798133159}
   speed: 5
 --- !u!1 &1481345147 stripped
 GameObject:

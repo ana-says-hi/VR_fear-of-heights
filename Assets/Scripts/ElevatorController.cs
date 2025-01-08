@@ -4,7 +4,7 @@ public class ElevatorController : MonoBehaviour
 {
     public Transform elevator;            // The elevator GameObject's Transform
     public Transform[] floors;           // An array of floor positions (e.g., Floor1, Floor2, Floor3)
-    public float speed = 2f;             // Speed of elevator movement
+    public float speed = 5f;             // Speed of elevator movement
     private bool isMoving = false;       // Tracks if the elevator is currently moving
     private Transform targetFloor;       // The floor the elevator is moving toward
 
