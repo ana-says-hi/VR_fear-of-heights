@@ -3,8 +3,8 @@ using UnityEngine;
 public class ThrowableObject : MonoBehaviour
 {
     public GameObject objectToThrow; // The prefab to be thrown
-    public float throwForce = 10f; // The force applied to the object when thrown
-    public Transform spawnPoint; // Optional spawn point for the object (defaults to camera)
+    public float throwForce = 10f;  // The force applied to the object when thrown
+    public Transform spawnPoint;   // Optional spawn point for the object (defaults to camera)
 
     void Update()
     {
@@ -40,11 +40,22 @@ public class ThrowableObject : MonoBehaviour
             return;
         }
 
-        rb.velocity = spawnTransform.forward * throwForce; // Set velocity for consistent movement
-        // Alternative to velocity: Use AddForce if you want an "impulse" effect
-        // rb.AddForce(spawnTransform.forward * throwForce, ForceMode.Impulse);
+        // Set velocity for consistent movement
+        rb.velocity = spawnTransform.forward * throwForce;
+
+        // Set collision detection mode to Continuous (to prevent tunneling)
+        rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+
+        // Optionally add this line to make the object stop moving on collision:
+        // rb.drag = 1f;  // You can experiment with the drag to make the object slow down when colliding
 
         // Destroy the thrown object after 5 seconds to avoid clutter
         Destroy(thrownObject, 5f);
+    }
+
+    // Debugging: Log when the object collides with something
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collided with: " + collision.gameObject.name);
     }
 }
