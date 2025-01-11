@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.055602226, g: 0.092940785, b: 0.1476003, a: 1}
+  m_IndirectSpecularColor: {r: 0.055614475, g: 0.09294586, b: 0.14765415, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2487,6 +2487,19 @@ MonoBehaviour:
   - {fileID: 1155468440}
   - {fileID: 798133159}
   speed: 5
+--- !u!65 &1442738039
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410565536}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9999999, y: 0.24669896, z: 2}
+  m_Center: {x: 0.0000002861023, y: 1.8766575, z: -0.00000019073487}
 --- !u!1 &1481345147 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 985cd6d57cb8650408d3496bcdccd54c, type: 3}
