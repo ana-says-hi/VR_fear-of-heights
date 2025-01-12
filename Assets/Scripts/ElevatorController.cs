@@ -4,9 +4,9 @@ public class ElevatorController : MonoBehaviour
 {
     public Transform elevator;            // The elevator GameObject's Transform
     public Transform[] floors;           // An array of floor positions (e.g., Floor1, Floor2, Floor3)
-    public float speed = 5f;             // Speed of elevator movement
-    private bool isMoving = false;       // Tracks if the elevator is currently moving
-    private Transform targetFloor;       // The floor the elevator is moving toward
+    public float speed = 5f;             // Speed
+    private bool isMoving = false;       
+    private Transform targetFloor;       
 
     private void Start()
     {
@@ -34,6 +34,13 @@ public class ElevatorController : MonoBehaviour
         for(int i=0;i<=7;i++)
             if(Input.GetKeyDown(KeyCode.Alpha1+i))
                 MoveElevatorToFloor(i);
+
+
+        if (Input.GetKeyDown(KeyCode.Space) && isMoving)
+        {
+            isMoving = false;
+            Debug.Log("Elevator stopped.");
+        }
 
         // Move the elevator if it's currently moving
         if (isMoving && targetFloor != null)
