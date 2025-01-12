@@ -10,8 +10,7 @@ public class ElevatorController : MonoBehaviour
 
     private void Start()
     {
-        // Automatically assign the floors by finding the child objects of the "Floors" GameObject
-        GameObject floorsParent = GameObject.Find("Floors"); // Ensure your parent is named "Floors"
+        GameObject floorsParent = GameObject.Find("Floors"); // parent "Floors"
         if (floorsParent != null)
         {
             int childCount = floorsParent.transform.childCount;
