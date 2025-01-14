@@ -1,4 +1,4 @@
-<img align="right" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Unity-Dark.svg" alt="UNITY" height="70">
+<img align="right" src="https://github.com/tandpfun/skill-icons/blob/main/icons/Unity-Dark.svg" alt="UNITY" height="70" margin="10px">
 
 ## Fear of HEIGHTS
 
