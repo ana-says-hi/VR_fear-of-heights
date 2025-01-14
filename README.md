@@ -1,10 +1,8 @@
-## Fear of HEIGHTS
+<div style="position: absolute; top: 0; right: 0; margin: 10px;">
+    <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Unity-Dark.svg" alt="UNITY" height="70">
+</div>
 
-<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Unity-Dark.svg" alt="UNITY" height="70" 
-style="position: absolute;
-       top: 0;
-       right: 0;
-       margin:4px">
+## Fear of HEIGHTS
 
 As many of you know, different fears can be treated by _exposure therapy_.
 
