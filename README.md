@@ -1,6 +1,4 @@
-<div style="position: absolute; top: 0; right: 0; margin: 10px;">
-    <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Unity-Dark.svg" alt="UNITY" height="70">
-</div>
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Unity-Dark.svg" alt="UNITY" height="70" style="float: right; margin: 10px;">
 
 ## Fear of HEIGHTS
 
