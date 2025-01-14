@@ -8,7 +8,7 @@ While outside, the patient will be able to look and walk around.
 While inside the elevator, the patient will be able to choose at what floor he will want to go (from 1 to 7). Going down and stopping the elevator at any point is possible.
 While on top of the building, the patient will be able to walk around and takehis time appoaching the edge.
 
-
+---
 Controls:
   - everywhere _arrow left_, _arrow right_ : changing scenes
   - everywhere WASD : moving
