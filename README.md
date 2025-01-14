@@ -1,11 +1,4 @@
-<table style="width: 100%;">
-    <tr>
-        <td></td>
-        <td style="text-align: right;">
-            <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Unity-Dark.svg" alt="UNITY" height="70">
-        </td>
-    </tr>
-</table>
+<img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Unity-Dark.svg" alt="UNITY" height="70">
 
 ## Fear of HEIGHTS
 
