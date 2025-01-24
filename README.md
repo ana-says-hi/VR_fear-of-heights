@@ -27,6 +27,7 @@ Some screenshots:
 ![image](https://github.com/user-attachments/assets/30bc6392-1cae-481b-b264-161a1735c0ab)
 
   - Scene 3, on top of the building
-<img width="581" alt="image" src="https://github.com/user-attachments/assets/b2a373b5-5ecf-4df6-8ee0-7425e6eaf845" />
+![image](https://github.com/user-attachments/assets/464d0b93-55d0-41e5-952b-0106c52b8039)
+
 
 
