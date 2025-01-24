@@ -16,3 +16,17 @@ Controls:
   - everywhere WASD : moving
   - in elevator _spacebar_ : stop the elevator
   - on building _spacebar_ : throw donuts (eating something sweet can decrease fear levels)  
+
+---
+
+Some screenshots:
+  - Scene 1, outside the building
+![image](https://github.com/user-attachments/assets/6b4d577d-01af-4ecf-9972-77138cb82c38)
+
+  - Scene 2, inside the elevator
+![image](https://github.com/user-attachments/assets/30bc6392-1cae-481b-b264-161a1735c0ab)
+
+  - Scene 3, on top of the building
+<img width="581" alt="image" src="https://github.com/user-attachments/assets/b2a373b5-5ecf-4df6-8ee0-7425e6eaf845" />
+
+
